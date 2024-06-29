@@ -681,6 +681,6 @@ PlayerSettings:
   projectName: HiddenObject 2024-06-29_17-55-19
   organizationId: vladsolokov
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
-  disableOldInputManagerSupport: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
+  disableOldInputManagerSupport: 1
   legacyClampBlendShapeWeights: 0
