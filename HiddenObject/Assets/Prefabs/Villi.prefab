@@ -90,6 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472176158341658590}
+  - component: {fileID: 4898319450871192126}
+  - component: {fileID: 4898319450871192125}
   m_Layer: 0
   m_Name: Villi
   m_TagString: Untagged
@@ -112,3 +114,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4898319450871192126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420826927171845846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cdfcf9c4022dd479bdb07b6ffd4665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  View: {fileID: 5717735399179424958}
+  newSprite: {fileID: 21300000, guid: d8476f92343762b4fbf89b8aeeab104c, type: 3}
+--- !u!60 &4898319450871192125
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8420826927171845846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.30419457, y: 0.058812022}
+      - {x: 0.009267569, y: 0.34179127}
+      - {x: -0.1543135, y: -0.028506398}
+      - {x: -0.5544682, y: -0.0030870438}
+      - {x: -0.6164796, y: -0.21667194}
+      - {x: -0.7841842, y: -0.39693308}
+      - {x: -0.7286348, y: -0.78490746}
+      - {x: -0.9028828, y: -1.0778629}
+      - {x: 0.8644347, y: -1.0857546}
+      - {x: 0.9026873, y: -0.45103216}
+      - {x: 1.0582063, y: -0.07481861}
+      - {x: 0.93771064, y: 0.13059807}
+      - {x: 0.57108605, y: 0.049441874}
