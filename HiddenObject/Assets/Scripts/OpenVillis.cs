@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace HiddenObjects {
-    public class OpenVillis : MonoBehaviour, ITucheble
+    public class OpenVillis : MonoBehaviour, ITouchable
     {
         [SerializeField] private GameObject View;
         [SerializeField] private Sprite newSprite;

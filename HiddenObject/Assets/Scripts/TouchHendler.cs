@@ -25,7 +25,7 @@ namespace HiddenObjects
             
             if (
                 raycastHit2D.collider != null 
-                && raycastHit2D.collider.gameObject.TryGetComponent<ITucheble>(out var touchble))
+                && raycastHit2D.collider.gameObject.TryGetComponent<ITouchable>(out var touchble))
             {
                 touchble.Touch();
             }

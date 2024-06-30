@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9147320941217609631}
   - component: {fileID: 6993450087598660484}
+  - component: {fileID: 5965670879982781038}
   m_Layer: 0
   m_Name: EnemyCell
   m_TagString: Untagged
@@ -310,3 +311,16 @@ PolygonCollider2D:
       - {x: 0.18380636, y: -0.31160986}
       - {x: 0.35630774, y: -0.0800581}
       - {x: 0.2394774, y: 0.22325733}
+--- !u!114 &5965670879982781038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147320941217609628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d41fa6584c1482449b03636ed84b772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 5
