@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public UnityEvent TimerEvent;
     public Text timerText; 
     [SerializeField] private float timeRemaining = 60;
     [SerializeField] private bool timerIsRunning = false;
@@ -27,13 +27,14 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
+                TimerEvent?.Invoke();
             }
         }
     }
 
     public void SetTime(float time)
     {
-        timeRemaining -= time;
+        timeRemaining += time;
     }
 
     private void DisplayTime(float timeToDisplay)

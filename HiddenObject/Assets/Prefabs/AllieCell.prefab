@@ -173,6 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3762247924071880452}
   - component: {fileID: 3155412204434176799}
+  - component: {fileID: 6109021404970062345}
   m_Layer: 0
   m_Name: AllieCell
   m_TagString: Untagged
@@ -228,6 +229,19 @@ PolygonCollider2D:
       - {x: 0.18380636, y: -0.31160986}
       - {x: 0.35630774, y: -0.0800581}
       - {x: 0.2394774, y: 0.22325733}
+--- !u!114 &6109021404970062345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762247924071880455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da53d322c04bb5040951d3cbac32dd06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsCount: 3
 --- !u!1 &3762247924192968422
 GameObject:
   m_ObjectHideFlags: 0
