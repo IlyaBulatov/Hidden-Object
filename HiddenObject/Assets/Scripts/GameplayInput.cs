@@ -13,6 +13,7 @@ namespace HiddenObjects
         private TouchInputMap _input;
         private SwipeDetection _swipeDetection;
         private ZoomDetection _approximationDetection;
+        private TouchHendler _touchHandler;
 
         private void Start()
         {
@@ -21,6 +22,7 @@ namespace HiddenObjects
             _swipeDetection = new SwipeDetection(_input, _inputMoveZone);
             _swipeDetection.OnMoveDeltaRecived += OnMoveDelta;
             _approximationDetection = new ZoomDetection(_input);
+            _touchHandler = new TouchHendler(_input);
             
             _approximationDetection.OnApproximationDetect += OnApproximationDetectAction;
 
