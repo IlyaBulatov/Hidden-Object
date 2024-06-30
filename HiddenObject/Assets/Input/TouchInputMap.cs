@@ -178,6 +178,54 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Tap"",
+            ""id"": ""a8f0ba2b-9a3e-4fd3-afb1-7ff1ff68373a"",
+            ""actions"": [
+                {
+                    ""name"": ""Tap"",
+                    ""type"": ""Button"",
+                    ""id"": ""cad539ac-d7fa-4500-af1f-31550532cd65"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TapPosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ee5af497-af8f-47d3-8a41-d5eb329031aa"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b78e6669-f6e9-4713-9c0c-beb302504fad"",
+                    ""path"": ""<Touchscreen>/touch0/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1180fa4-ad0a-4ce1-ad5a-96f8d79391f3"",
+                    ""path"": ""<Touchscreen>/touch0/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TapPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -193,6 +241,10 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
         m_Approximation_Delta = m_Approximation.FindAction("Delta", throwIfNotFound: true);
         m_Approximation_FirctTouchPosition = m_Approximation.FindAction("FirctTouchPosition", throwIfNotFound: true);
         m_Approximation_SecondTouchPosition = m_Approximation.FindAction("SecondTouchPosition", throwIfNotFound: true);
+        // Tap
+        m_Tap = asset.FindActionMap("Tap", throwIfNotFound: true);
+        m_Tap_Tap = m_Tap.FindAction("Tap", throwIfNotFound: true);
+        m_Tap_TapPosition = m_Tap.FindAction("TapPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -354,6 +406,47 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
         }
     }
     public ApproximationActions @Approximation => new ApproximationActions(this);
+
+    // Tap
+    private readonly InputActionMap m_Tap;
+    private ITapActions m_TapActionsCallbackInterface;
+    private readonly InputAction m_Tap_Tap;
+    private readonly InputAction m_Tap_TapPosition;
+    public struct TapActions
+    {
+        private @TouchInputMap m_Wrapper;
+        public TapActions(@TouchInputMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Tap => m_Wrapper.m_Tap_Tap;
+        public InputAction @TapPosition => m_Wrapper.m_Tap_TapPosition;
+        public InputActionMap Get() { return m_Wrapper.m_Tap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TapActions set) { return set.Get(); }
+        public void SetCallbacks(ITapActions instance)
+        {
+            if (m_Wrapper.m_TapActionsCallbackInterface != null)
+            {
+                @Tap.started -= m_Wrapper.m_TapActionsCallbackInterface.OnTap;
+                @Tap.performed -= m_Wrapper.m_TapActionsCallbackInterface.OnTap;
+                @Tap.canceled -= m_Wrapper.m_TapActionsCallbackInterface.OnTap;
+                @TapPosition.started -= m_Wrapper.m_TapActionsCallbackInterface.OnTapPosition;
+                @TapPosition.performed -= m_Wrapper.m_TapActionsCallbackInterface.OnTapPosition;
+                @TapPosition.canceled -= m_Wrapper.m_TapActionsCallbackInterface.OnTapPosition;
+            }
+            m_Wrapper.m_TapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Tap.started += instance.OnTap;
+                @Tap.performed += instance.OnTap;
+                @Tap.canceled += instance.OnTap;
+                @TapPosition.started += instance.OnTapPosition;
+                @TapPosition.performed += instance.OnTapPosition;
+                @TapPosition.canceled += instance.OnTapPosition;
+            }
+        }
+    }
+    public TapActions @Tap => new TapActions(this);
     public interface ISwipeActions
     {
         void OnTouchDelta(InputAction.CallbackContext context);
@@ -366,5 +459,10 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
         void OnDelta(InputAction.CallbackContext context);
         void OnFirctTouchPosition(InputAction.CallbackContext context);
         void OnSecondTouchPosition(InputAction.CallbackContext context);
+    }
+    public interface ITapActions
+    {
+        void OnTap(InputAction.CallbackContext context);
+        void OnTapPosition(InputAction.CallbackContext context);
     }
 }

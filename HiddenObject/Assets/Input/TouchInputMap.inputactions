@@ -156,6 +156,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Tap",
+            "id": "a8f0ba2b-9a3e-4fd3-afb1-7ff1ff68373a",
+            "actions": [
+                {
+                    "name": "Tap",
+                    "type": "Button",
+                    "id": "cad539ac-d7fa-4500-af1f-31550532cd65",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TapPosition",
+                    "type": "PassThrough",
+                    "id": "ee5af497-af8f-47d3-8a41-d5eb329031aa",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b78e6669-f6e9-4713-9c0c-beb302504fad",
+                    "path": "<Touchscreen>/touch0/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1180fa4-ad0a-4ce1-ad5a-96f8d79391f3",
+                    "path": "<Touchscreen>/touch0/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
