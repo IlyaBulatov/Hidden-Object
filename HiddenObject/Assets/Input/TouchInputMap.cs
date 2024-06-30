@@ -28,7 +28,16 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
             ""id"": ""d252ac47-40b9-4b80-969d-bf5b6f09272a"",
             ""actions"": [
                 {
-                    ""name"": ""Touch"",
+                    ""name"": ""TouchDelta"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1ab9170d-1540-4600-a645-dfe2518e68ec"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TouchPress"",
                     ""type"": ""Button"",
                     ""id"": ""b957095a-d267-4cb2-8bb6-31345832dded"",
                     ""expectedControlType"": ""Button"",
@@ -37,9 +46,9 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""TouchDelta"",
+                    ""name"": ""TouchPosition"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""1ab9170d-1540-4600-a645-dfe2518e68ec"",
+                    ""id"": ""0867a724-5650-43d9-a118-092daab49bab"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -47,17 +56,6 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""2e02ebe3-7e80-4ad3-b7a3-d75078429840"",
-                    ""path"": ""<Touchscreen>/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Touch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""112e15bb-8adf-46bc-abf4-e3b68e0fc60f"",
@@ -68,6 +66,116 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
                     ""action"": ""TouchDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e02ebe3-7e80-4ad3-b7a3-d75078429840"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68f64046-bf4b-454e-af6a-c635d25658f1"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Approximation"",
+            ""id"": ""0a19c7a6-6710-43d5-8bef-c112aedf5f1a"",
+            ""actions"": [
+                {
+                    ""name"": ""TouchContact"",
+                    ""type"": ""Button"",
+                    ""id"": ""94314a5b-ba74-4b96-8715-054c24c8ea91"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Delta"",
+                    ""type"": ""Button"",
+                    ""id"": ""c90903d0-9b6c-456f-8160-77b601b72b47"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FirctTouchPosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""80992624-521c-4f93-adf8-eb3a83490bfd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondTouchPosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""51348300-d15c-470c-b647-cb5c8ce5dc4b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6a883757-a968-4892-8256-4fa3786a4e65"",
+                    ""path"": ""<Touchscreen>/touch1/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchContact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""761d9916-38e4-421f-a4ee-218294d9ea33"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3ab1604-5404-4ba6-bdfa-f518a7b8710a"",
+                    ""path"": ""<Touchscreen>/touch0/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirctTouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4fcf319-c996-4d25-9b41-3b083ca0927b"",
+                    ""path"": ""<Touchscreen>/touch1/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondTouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -76,8 +184,15 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
 }");
         // Swipe
         m_Swipe = asset.FindActionMap("Swipe", throwIfNotFound: true);
-        m_Swipe_Touch = m_Swipe.FindAction("Touch", throwIfNotFound: true);
         m_Swipe_TouchDelta = m_Swipe.FindAction("TouchDelta", throwIfNotFound: true);
+        m_Swipe_TouchPress = m_Swipe.FindAction("TouchPress", throwIfNotFound: true);
+        m_Swipe_TouchPosition = m_Swipe.FindAction("TouchPosition", throwIfNotFound: true);
+        // Approximation
+        m_Approximation = asset.FindActionMap("Approximation", throwIfNotFound: true);
+        m_Approximation_TouchContact = m_Approximation.FindAction("TouchContact", throwIfNotFound: true);
+        m_Approximation_Delta = m_Approximation.FindAction("Delta", throwIfNotFound: true);
+        m_Approximation_FirctTouchPosition = m_Approximation.FindAction("FirctTouchPosition", throwIfNotFound: true);
+        m_Approximation_SecondTouchPosition = m_Approximation.FindAction("SecondTouchPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -137,14 +252,16 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
     // Swipe
     private readonly InputActionMap m_Swipe;
     private ISwipeActions m_SwipeActionsCallbackInterface;
-    private readonly InputAction m_Swipe_Touch;
     private readonly InputAction m_Swipe_TouchDelta;
+    private readonly InputAction m_Swipe_TouchPress;
+    private readonly InputAction m_Swipe_TouchPosition;
     public struct SwipeActions
     {
         private @TouchInputMap m_Wrapper;
         public SwipeActions(@TouchInputMap wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Touch => m_Wrapper.m_Swipe_Touch;
         public InputAction @TouchDelta => m_Wrapper.m_Swipe_TouchDelta;
+        public InputAction @TouchPress => m_Wrapper.m_Swipe_TouchPress;
+        public InputAction @TouchPosition => m_Wrapper.m_Swipe_TouchPosition;
         public InputActionMap Get() { return m_Wrapper.m_Swipe; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -154,29 +271,100 @@ public partial class @TouchInputMap : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_SwipeActionsCallbackInterface != null)
             {
-                @Touch.started -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouch;
-                @Touch.performed -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouch;
-                @Touch.canceled -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouch;
                 @TouchDelta.started -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchDelta;
                 @TouchDelta.performed -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchDelta;
                 @TouchDelta.canceled -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchDelta;
+                @TouchPress.started -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPress;
+                @TouchPress.performed -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPress;
+                @TouchPress.canceled -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPress;
+                @TouchPosition.started -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.performed -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.canceled -= m_Wrapper.m_SwipeActionsCallbackInterface.OnTouchPosition;
             }
             m_Wrapper.m_SwipeActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Touch.started += instance.OnTouch;
-                @Touch.performed += instance.OnTouch;
-                @Touch.canceled += instance.OnTouch;
                 @TouchDelta.started += instance.OnTouchDelta;
                 @TouchDelta.performed += instance.OnTouchDelta;
                 @TouchDelta.canceled += instance.OnTouchDelta;
+                @TouchPress.started += instance.OnTouchPress;
+                @TouchPress.performed += instance.OnTouchPress;
+                @TouchPress.canceled += instance.OnTouchPress;
+                @TouchPosition.started += instance.OnTouchPosition;
+                @TouchPosition.performed += instance.OnTouchPosition;
+                @TouchPosition.canceled += instance.OnTouchPosition;
             }
         }
     }
     public SwipeActions @Swipe => new SwipeActions(this);
+
+    // Approximation
+    private readonly InputActionMap m_Approximation;
+    private IApproximationActions m_ApproximationActionsCallbackInterface;
+    private readonly InputAction m_Approximation_TouchContact;
+    private readonly InputAction m_Approximation_Delta;
+    private readonly InputAction m_Approximation_FirctTouchPosition;
+    private readonly InputAction m_Approximation_SecondTouchPosition;
+    public struct ApproximationActions
+    {
+        private @TouchInputMap m_Wrapper;
+        public ApproximationActions(@TouchInputMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TouchContact => m_Wrapper.m_Approximation_TouchContact;
+        public InputAction @Delta => m_Wrapper.m_Approximation_Delta;
+        public InputAction @FirctTouchPosition => m_Wrapper.m_Approximation_FirctTouchPosition;
+        public InputAction @SecondTouchPosition => m_Wrapper.m_Approximation_SecondTouchPosition;
+        public InputActionMap Get() { return m_Wrapper.m_Approximation; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ApproximationActions set) { return set.Get(); }
+        public void SetCallbacks(IApproximationActions instance)
+        {
+            if (m_Wrapper.m_ApproximationActionsCallbackInterface != null)
+            {
+                @TouchContact.started -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnTouchContact;
+                @TouchContact.performed -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnTouchContact;
+                @TouchContact.canceled -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnTouchContact;
+                @Delta.started -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnDelta;
+                @Delta.performed -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnDelta;
+                @Delta.canceled -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnDelta;
+                @FirctTouchPosition.started -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnFirctTouchPosition;
+                @FirctTouchPosition.performed -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnFirctTouchPosition;
+                @FirctTouchPosition.canceled -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnFirctTouchPosition;
+                @SecondTouchPosition.started -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnSecondTouchPosition;
+                @SecondTouchPosition.performed -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnSecondTouchPosition;
+                @SecondTouchPosition.canceled -= m_Wrapper.m_ApproximationActionsCallbackInterface.OnSecondTouchPosition;
+            }
+            m_Wrapper.m_ApproximationActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @TouchContact.started += instance.OnTouchContact;
+                @TouchContact.performed += instance.OnTouchContact;
+                @TouchContact.canceled += instance.OnTouchContact;
+                @Delta.started += instance.OnDelta;
+                @Delta.performed += instance.OnDelta;
+                @Delta.canceled += instance.OnDelta;
+                @FirctTouchPosition.started += instance.OnFirctTouchPosition;
+                @FirctTouchPosition.performed += instance.OnFirctTouchPosition;
+                @FirctTouchPosition.canceled += instance.OnFirctTouchPosition;
+                @SecondTouchPosition.started += instance.OnSecondTouchPosition;
+                @SecondTouchPosition.performed += instance.OnSecondTouchPosition;
+                @SecondTouchPosition.canceled += instance.OnSecondTouchPosition;
+            }
+        }
+    }
+    public ApproximationActions @Approximation => new ApproximationActions(this);
     public interface ISwipeActions
     {
-        void OnTouch(InputAction.CallbackContext context);
         void OnTouchDelta(InputAction.CallbackContext context);
+        void OnTouchPress(InputAction.CallbackContext context);
+        void OnTouchPosition(InputAction.CallbackContext context);
+    }
+    public interface IApproximationActions
+    {
+        void OnTouchContact(InputAction.CallbackContext context);
+        void OnDelta(InputAction.CallbackContext context);
+        void OnFirctTouchPosition(InputAction.CallbackContext context);
+        void OnSecondTouchPosition(InputAction.CallbackContext context);
     }
 }

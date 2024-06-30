@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
 
 namespace HiddenObjects
 {
     public class CameraMvementHandler : MonoBehaviour
     {
+        public Transform playerObject;
+
         [SerializeField] private float _sensitivity = 1f;
 
         private GameplayInput _gameplayInput;
@@ -23,7 +24,7 @@ namespace HiddenObjects
             var horizontal = dt * _sensitivity * delta.x;
             var vertical = dt * _sensitivity * delta.y;
 
-            transform.position += new Vector3(-horizontal, -vertical, 0);
+            playerObject.position += new Vector3(-horizontal, -vertical, 0);
         }
     }
 }

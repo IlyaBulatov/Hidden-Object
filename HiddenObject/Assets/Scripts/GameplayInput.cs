@@ -1,47 +1,36 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace HiddenObjects
 {
     public class GameplayInput : MonoBehaviour
     {
+        public event Action<float> OnZoomPerformed;
         public event Action<Vector2> OnMoveDeltaPerformed;
+
+        public RectTransform _inputMoveZone;
 
         private TouchInputMap _input;
         private SwipeDetection _swipeDetection;
-        //private ApproximationDetection _approximationDetection;
+        private ZoomDetection _approximationDetection;
 
         private void Start()
         {
             _input = new TouchInputMap();
 
-            _swipeDetection = new SwipeDetection(_input);
+            _swipeDetection = new SwipeDetection(_input, _inputMoveZone);
             _swipeDetection.OnMoveDeltaRecived += OnMoveDelta;
-            //_approximationDetection = new ApproximationDetection(_input);
-            //
-            //_approximationDetection.DoubleTouch += ApproximationDetectionOnDoubleTouch;
-            //_approximationDetection.DeltaDoubleTouch += ApproximationDetectionOnDeltaDoubleTouch;
-            //_approximationDetection.OnApproximationDetect += OnApproximationDetectAction;
+            _approximationDetection = new ZoomDetection(_input);
+            
+            _approximationDetection.OnApproximationDetect += OnApproximationDetectAction;
 
             _input.Enable();
         }
-
-        //private void ApproximationDetectionOnDoubleTouch()
-        //{
-        //    
-        //
-        //}
-        //
-        //private void ApproximationDetectionOnDeltaDoubleTouch()
-        //{
-        //    
-        //}
-        //
-        //private void OnApproximationDetectAction()
-        //{
-        //    
-        //}
+        
+        private void OnApproximationDetectAction(float distance)
+        {
+            OnZoomPerformed?.Invoke(distance);
+        }
 
         private void OnDisable()
         {
